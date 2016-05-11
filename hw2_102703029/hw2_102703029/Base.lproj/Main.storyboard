@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nvE-5c-Hpb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--MRT Stations-->
+        <scene sceneID="S36-bT-c3B">
+            <objects>
+                <tableViewController id="7Ib-g7-to6" customClass="MRTTableViewController" customModule="hw2_102703029" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="43" sectionHeaderHeight="28" sectionFooterHeight="28" id="PNA-E8-U3m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MRTCell" rowHeight="43" id="ZVC-TZ-nmJ" customClass="MRTTableViewCell" customModule="hw2_102703029" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="43"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZVC-TZ-nmJ" id="ord-mH-9fv">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="42"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Csr-Co-Ofr">
+                                            <rect key="frame" x="423" y="8" width="136" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="136" identifier="lineNumStackViewWidth" id="IuC-dS-XHx"/>
+                                            </constraints>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bo6-Xx-sm0">
+                                            <rect key="frame" x="16" y="8" width="42" height="26"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Bo6-Xx-sm0" firstAttribute="top" secondItem="ord-mH-9fv" secondAttribute="topMargin" id="Eqp-7f-fwb"/>
+                                        <constraint firstItem="Bo6-Xx-sm0" firstAttribute="bottom" secondItem="ord-mH-9fv" secondAttribute="bottomMargin" id="GFd-2r-s92"/>
+                                        <constraint firstItem="Csr-Co-Ofr" firstAttribute="top" secondItem="ord-mH-9fv" secondAttribute="topMargin" id="OVb-2E-xxp"/>
+                                        <constraint firstItem="Csr-Co-Ofr" firstAttribute="bottom" secondItem="ord-mH-9fv" secondAttribute="bottomMargin" id="ce7-Vu-Xdh"/>
+                                        <constraint firstItem="Csr-Co-Ofr" firstAttribute="trailing" secondItem="ord-mH-9fv" secondAttribute="trailingMargin" id="ckO-eO-jny"/>
+                                        <constraint firstItem="Bo6-Xx-sm0" firstAttribute="leading" secondItem="ord-mH-9fv" secondAttribute="leadingMargin" constant="8" id="yYE-Kd-a4C"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lineNumStackView" destination="Csr-Co-Ofr" id="kyK-H4-e0m"/>
+                                    <outlet property="nameLabel" destination="Bo6-Xx-sm0" id="LOm-w2-Ala"/>
+                                    <segue destination="U6V-0i-JQf" kind="show" identifier="ShowDetail" id="sSt-PV-D82"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7Ib-g7-to6" id="Zlm-m8-czQ"/>
+                            <outlet property="delegate" destination="7Ib-g7-to6" id="KKZ-EY-LJ0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="MRT Stations" id="Qk3-zQ-9Wo"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ek-k0-HDx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1605" y="81"/>
+        </scene>
+        <!--MRT-->
+        <scene sceneID="rCh-WT-efd">
+            <objects>
+                <viewController id="U6V-0i-JQf" customClass="StationDetailViewController" customModule="hw2_102703029" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iWd-of-mXN"/>
+                        <viewControllerLayoutGuide type="bottom" id="hEa-k8-KXU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hB1-qt-RqK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bd1-Z3-nIF">
+                                <rect key="frame" x="229" y="64" width="143" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="myW-h1-RwR">
+                                <rect key="frame" x="0.0" y="136" width="600" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="0G4-2Y-8BN"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bd1-Z3-nIF" firstAttribute="top" secondItem="iWd-of-mXN" secondAttribute="bottom" id="2JH-fO-UWD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="myW-h1-RwR" secondAttribute="trailing" constant="-20" id="2LN-i5-wDd"/>
+                            <constraint firstItem="myW-h1-RwR" firstAttribute="top" secondItem="bd1-Z3-nIF" secondAttribute="bottom" id="SF6-QL-18A"/>
+                            <constraint firstItem="myW-h1-RwR" firstAttribute="leading" secondItem="hB1-qt-RqK" secondAttribute="leadingMargin" constant="-20" id="o0p-YJ-m0E"/>
+                            <constraint firstItem="bd1-Z3-nIF" firstAttribute="centerX" secondItem="hB1-qt-RqK" secondAttribute="centerX" id="oxc-3I-t12"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="MRT" id="2Vr-dn-HSs"/>
+                    <connections>
+                        <outlet property="stationLinesStackView" destination="myW-h1-RwR" id="JbJ-29-h24"/>
+                        <outlet property="stationNameLabel" destination="bd1-Z3-nIF" id="XQg-Rf-8Ja"/>
+                        <outlet property="stationNevigationItemName" destination="2Vr-dn-HSs" id="eHK-0A-L2V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HpB-cn-erM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2307" y="87"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OEg-Rd-6Wk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nvE-5c-Hpb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ncx-2E-cyW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Ib-g7-to6" kind="relationship" relationship="rootViewController" id="DZm-lY-1d2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="snY-uM-h1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="793" y="81"/>
+        </scene>
+    </scenes>
+</document>

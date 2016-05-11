@@ -1,0 +1,6 @@
+platform :ios, '9.0'
+use_frameworks!
+
+target 'hw2_102703029' do
+	pod 'ObjectMapper', '~>1.2.0'
+end
